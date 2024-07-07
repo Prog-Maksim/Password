@@ -14,7 +14,7 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
-        Background="White"
+        Background="Transparent"
         MouseDown="MainWindow_OnMouseDown">
 
     <WindowChrome.WindowChrome>
@@ -26,7 +26,74 @@
         </WindowChrome>
     </WindowChrome.WindowChrome>
 
-    <Border>
-        
+    <Border
+        CornerRadius="10"
+        Background="#C7D9E7">
+        <Grid
+            ShowGridLines="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.28*" MinWidth="250"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid
+                Grid.Column="0"
+                ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <StackPanel
+                    Grid.Row="0"
+                    Orientation="Horizontal"
+                    Margin="10 12 0 0">
+                    <Ellipse
+                        x:Name="CloseWindow"
+                        Width="20"
+                        Height="20"
+                        Fill="#E16B73"
+                        Cursor="Hand"
+                        MouseDown="CloseWindow_OnMouseDown">
+                    </Ellipse>
+                    
+                    <Ellipse
+                        x:Name="WindowSize"
+                        Width="20"
+                        Height="20"
+                        Fill="#EBBB50"
+                        Cursor="Hand"
+                        Margin="5 0 5 0"
+                        MouseDown="WindowSize_OnMouseDown">
+                    </Ellipse>
+                    
+                    <Ellipse
+                        x:Name="WindowMinimize"
+                        Width="20"
+                        Height="20"
+                        Cursor="Hand"
+                        Fill="#37B957"
+                        MouseDown="WindowMinimize_OnMouseDown">
+                    </Ellipse>
+                </StackPanel>
+                
+                <TextBlock
+                    Grid.Row="0"
+                    Text="Password"
+                    HorizontalAlignment="Center"
+                    FontFamily="Montserrat"
+                    Foreground="White"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Margin="0 12 0 0">
+                </TextBlock>
+            </Grid>
+
+            <Border
+                Grid.Column="1"
+                Background="White"
+                CornerRadius="15 10 10 15">
+            </Border>
+        </Grid>
     </Border>
 </Window>
