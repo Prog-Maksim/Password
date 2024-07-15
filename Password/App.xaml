@@ -12,6 +12,11 @@
                 <ResourceDictionary Source="Styles/LeftButtonBotton/SettingsButtonStyle.xaml" />
                 <ResourceDictionary Source="Styles/LeftButtonBotton/AuthorizeButtonStyle.xaml" />
                 <ResourceDictionary Source="Styles/PopupButtonStyle/ButtonStyle.xaml" />
+                <ResourceDictionary Source="Styles/CreateFolderStyles/BorderUpdateIcon.xaml"/>
+                <ResourceDictionary Source="Styles/CreateFolderStyles/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="Styles/CreateFolderStyles/Buttons/PaletteButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/CreateFolderStyles/Buttons/ActionButtonStyleClose.xaml"/>
+                <ResourceDictionary Source="Styles/CreateFolderStyles/Buttons/ActionButtonStyleEnter.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
         </ResourceDictionary>
