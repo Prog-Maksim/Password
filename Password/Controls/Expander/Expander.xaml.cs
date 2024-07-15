@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using MahApps.Metro.IconPacks;
+using Password.DialogsMenu;
 
 namespace Password.Controls.Expander;
 
@@ -14,12 +15,14 @@ public partial class Expander
     public delegate void SelectFolder(Folder.Folder folder);
 
     private Folder.Folder? _active;
+    private MainWindow _window;
     
-    public Expander()
+    public Expander(MainWindow window)
     {
         InitializeComponent();
 
         _grids = new List<Grid>();
+        _window = window;
     }
 
     private Popup? _PopupIsCreate;
@@ -46,10 +49,16 @@ public partial class Expander
 
     private void AddNewFolder()
     {
-        SelectFolder select = ClickFolder;
-        
-        Folder.Folder folder1 = new Folder.Folder(PackIconMaterialKind.KeyVariant, "#027AFD", "новая папка", 1, select);
-        AddObjGridActive(folder1);
+        CreateFolder createFolder = new CreateFolder();
+        createFolder.Owner = _window;
+        createFolder.ShowDialog();
+
+        if (createFolder.DialogResult == true)
+        {
+            SelectFolder select = ClickFolder;
+            Folder.Folder folder1 = new Folder.Folder(createFolder.Icon, createFolder.Color, createFolder.Name, select);
+            AddObjGridActive(folder1);
+        }
     }
 
     private void ClickFolder(Folder.Folder folder)
@@ -115,10 +124,10 @@ public partial class Expander
     private void Expander_OnLoaded(object sender, RoutedEventArgs e)
     {
         SelectFolder select = ClickFolder;
-        Folder.Folder folder1 = new Folder.Folder(PackIconMaterialKind.KeyVariant, "#75B2CD", "Wi-Fi", 171, select);
-        Folder.Folder folder2 = new Folder.Folder(PackIconMaterialKind.KeyVariant, "#E0443E", "PassKeys", 10, select);
-        Folder.Folder folder3 = new Folder.Folder(PackIconMaterialKind.KeyVariant, "#EED330", "Codes", 108, select);
-        Folder.Folder folder4 = new Folder.Folder(PackIconMaterialKind.KeyVariant, "#D3992F", "Deleted", 53, select);
+        Folder.Folder folder1 = new Folder.Folder(PackIconMaterialKind.KeyVariant, "#75B2CD", "Wi-Fi",select, 171);
+        Folder.Folder folder2 = new Folder.Folder(PackIconMaterialKind.KeyVariant, "#E0443E", "PassKeys", select, 10);
+        Folder.Folder folder3 = new Folder.Folder(PackIconMaterialKind.KeyVariant, "#EED330", "Codes", select, 108);
+        Folder.Folder folder4 = new Folder.Folder(PackIconMaterialKind.KeyVariant, "#D3992F", "Deleted", select, 53);
         
         AddObjGridActive(folder1);
         AddObjGrid(folder2);
