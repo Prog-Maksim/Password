@@ -13,7 +13,7 @@ public partial class Folder
     private string _folderColor;
     private string _folderName;
 
-    public Folder(PackIconMaterialKind icon, string folderColor, string folderName, int folderNum, Expander.Expander.SelectFolder selectFolder)
+    public Folder(PackIconMaterialKind icon, string folderColor, string folderName, Expander.Expander.SelectFolder selectFolder, int folderNum = 0)
     {
         InitializeComponent();
         SizeChanged += Bord_SizeChanged;
