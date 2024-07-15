@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Password;
 
-public partial class MainWindow : Window
+public partial class MainWindow
 {
     public MainWindow()
     {
@@ -47,4 +47,10 @@ public partial class MainWindow : Window
     }
     
     #endregion
+
+    private void AuthorizeButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        MessageBox.Show("Извините, сейчас в версии alpha 0.0.1 Password Cloud не работает!", "password inform",
+            MessageBoxButton.OK, MessageBoxImage.Information);
+    }
 }
