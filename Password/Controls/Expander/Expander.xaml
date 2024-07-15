@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Password.Controls.Expander.Expander"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Background="Transparent"
+             Loaded="Expander_OnLoaded">
+    <Expander Name="ExpanderContent" IsExpanded="True">
+        <Expander.Header>
+            <TextBlock
+                Text="Хранилище"
+                FontFamily="Montserrat"
+                FontSize="15"
+                FontWeight="Black"
+                Foreground="#AFAFAF"
+                MouseRightButtonDown="ExpanderText_OnMouseRightButtonDown">
+            </TextBlock>
+        </Expander.Header>
+
+        <StackPanel x:Name="Storage" Margin="0 0 10 0">
+        </StackPanel>
+    </Expander>
+</UserControl>
