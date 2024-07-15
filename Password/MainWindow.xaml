@@ -86,7 +86,7 @@
                     FontWeight="Bold"
                     Margin="60 12 0 0">
                     <Run>Password</Run>
-                    <Run FontSize="10" Foreground="DarkGray">alpha 0.0.1</Run>
+                    <Run FontSize="10" Foreground="DarkGray" Text="{Binding Version}"></Run>
                 </TextBlock>
 
                 <ScrollViewer

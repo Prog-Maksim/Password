@@ -8,7 +8,11 @@ public partial class MainWindow
     public MainWindow()
     {
         InitializeComponent();
+
+        DataContext = this;
     }
+
+    public string Version { get; set; } = GlobalVariables.Version;
 
     # region systemButton
     private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
@@ -50,7 +54,7 @@ public partial class MainWindow
 
     private void AuthorizeButton_OnClick(object sender, RoutedEventArgs e)
     {
-        MessageBox.Show("Извините, сейчас в версии alpha 0.0.1 Password Cloud не работает!", "password inform",
+        MessageBox.Show($"Извините, сейчас в версии {GlobalVariables.Version} Password Cloud не работает!", "password inform",
             MessageBoxButton.OK, MessageBoxImage.Information);
     }
 }
