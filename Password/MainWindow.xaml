@@ -14,7 +14,8 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        MouseLeftButtonDown="MainWindow_OnMouseDown">
+        MouseLeftButtonDown="MainWindow_OnMouseDown"
+        Loaded="MainWindow_OnLoaded">
 
     <WindowChrome.WindowChrome>
         <WindowChrome
@@ -93,10 +94,7 @@
                     Grid.Row="1"
                     Margin="10 5 0 5"
                     VerticalScrollBarVisibility="Hidden">
-                    <StackPanel>
-                        <obj:Expander>
-                            
-                        </obj:Expander>
+                    <StackPanel Name="MainStackPanel">
                     </StackPanel>
                 </ScrollViewer>
 

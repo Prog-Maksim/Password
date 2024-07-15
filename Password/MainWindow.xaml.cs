@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using Password.Controls.Expander;
 
 namespace Password;
 
@@ -56,5 +57,11 @@ public partial class MainWindow
     {
         MessageBox.Show($"Извините, сейчас в версии {GlobalVariables.Version} Password Cloud не работает!", "password inform",
             MessageBoxButton.OK, MessageBoxImage.Information);
+    }
+
+    private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+    {
+        Expander expander = new Expander(this);
+        MainStackPanel.Children.Add(expander);
     }
 }
